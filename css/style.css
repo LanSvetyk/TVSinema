@@ -636,8 +636,8 @@ input {
     
 }
 .modal__inner {
-    /* width: 100rem;
-    height: 60rem; */
+    width: 100rem;
+    height: 60rem;
 }
 
 
