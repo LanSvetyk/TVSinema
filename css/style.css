@@ -53,6 +53,9 @@ input {
 
 .header {
     grid-area: my-header;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.07);
+    
 }
 
 .aside {
@@ -61,6 +64,7 @@ input {
 
 .main {
     grid-area: my-main;
+    padding-top: 5rem;
 }
 .grid {
     display: grid;
@@ -69,7 +73,7 @@ input {
     "my-aside my-main my-main"
     "my-aside my-main my-main";
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    gap: 8rem 0;
+    gap: 3rem 0;
 }
 
 .grid-init {
@@ -82,6 +86,7 @@ input {
 .header__wrap {
     display: flex;
     align-items: center;
+    margin-bottom: 2.4rem;
 }
 
 .header__logo {
@@ -391,10 +396,41 @@ input {
 /* aside */
 
 .aside {
-    padding-right: 5rem;
+    position: relative;
+    padding-right: 3.5rem;
+}
+.aside::after {
+    position: absolute;
+    content: url(../img/arrowleftbutton.svg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    height: 2.6rem;
+    top: 10.7rem;
+    right: 2.5rem;
+    background: #FCFCFE;
+    border-radius: 2rem;
+    cursor: pointer;
 }
 
 .box-init {
+    
+}
+
+.aside__wrap {
+    background: rgba(255, 255, 255, 0.02);
+    margin-left: -2.4rem;
+}
+
+.aside__top {
+    padding-top: 5rem;
+    padding-right: 2.3rem;
+    padding-left: 2.3rem;
+    padding-bottom: 4rem;
+    background: #17161B;
+       
+    border-right: .1rem solid rgba(255, 255, 255, 0.1);;
 }
 
 .aside__title {
@@ -458,6 +494,10 @@ input {
     background-position: center;
     background-size: cover;
     padding: 1.9rem 0 1.9rem 1.9rem;
+    
+}
+
+.aside-item:nth-child(2) {
     margin-bottom: 3rem;
 }
 
@@ -468,10 +508,26 @@ input {
     line-height: 119%;
     z-index: 10;
 }
-
 .aside__footer {
     position: relative;
     z-index: 10;
+}
+.aside__footer-botton {
+    position: relative;
+    z-index: 10;
+}
+
+.aside__footer-botton::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 6.5rem;
+    height: 0.1rem;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    top: -50%;
+    left: 0;
+    transform: translate(0, 50%);
 }
 
 .aside__item-name {
@@ -488,8 +544,7 @@ input {
 }
 
 .aside__bottom {
-    padding: 2.5rem 2rem 2rem 0;
-    background: rgba(255, 255, 255, 0.02);
+    padding: 2.5rem 0rem 2rem 2.4rem;
 }
 
 .aside__favorite {
@@ -554,6 +609,35 @@ input {
 
 .gray {
     background: #2B2A2F;
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding: 3rem 0;
+    z-index: 1000;
+    display: none;
+}
+
+.active {
+    display: flex;
+}
+.close {
+    
+}
+.modal__inner {
+    /* width: 100rem;
+    height: 60rem; */
 }
 
 
